@@ -1,0 +1,55 @@
+seed: 42
+data:
+  path: data/data.csv
+  target: "Bankrupt?"
+  # В датасете нет даты отчёта: порядок строк используется как прокси времени (см. README, раздел «Ограничения»)
+  time_proxy: row_order
+split:
+  train: 0.70
+  valid: 0.15        # test = оставшиеся 15%
+features:
+  corr_duplicate_threshold: 0.98   # пары с |rho| >= порога считаются дублями (оставляем более сильный)
+  clip_quantiles: [0.01, 0.99]     # границы винзоризации для новых признаков (считаются на train)
+baseline:
+  max_bins: 10
+  min_bin_share: 0.05
+  min_bin_bads: 5
+  iv_min: 0.05
+  corr_max: 0.70
+  max_features: 15
+  c_grid: [0.01, 0.03, 0.1, 0.3, 1.0]
+  scorecard: {base_score: 600, base_odds: 50, pdo: 20}
+boosting:
+  engine: lightgbm                 # lightgbm | hist_gb (запасной движок, если lightgbm не установлен)
+  early_stopping_rounds: 100
+  max_estimators: 3000
+  search: {n_iter: 30, n_splits: 5}
+  # final_params перезаписывается автоматически после этапа 3 (python run_all.py)
+  final_params:
+    num_leaves: 16
+    learning_rate: 0.02
+    min_child_samples: 50
+    subsample: 0.8
+    colsample_bytree: 0.8
+    reg_lambda: 1.0
+    scale_pos_weight: 3.0
+    n_estimators: 296
+    subsample_freq: 1
+    reg_alpha: 0.0
+calibration:
+  method: isotonic
+  pd_floor: 0.0005          # нижняя граница PD после калибровки
+finance:
+  lgd: 0.45                  # по условию задания
+  ead: 1.0                   # экспозиция на компанию (нормировано)
+  margin: 0.08               # ДОПУЩЕНИЕ: чистая маржа с одобренной «хорошей» компании, доля от EAD
+  margin_sensitivity: [0.03, 0.05, 0.08, 0.12]
+  check_shares: [0.05, 0.10, 0.20]   # доля компаний, отбираемых на проверку (для полноты)
+  main_check_share: 0.10
+  ead_money_example: 1000000          # условная EAD в тенге для иллюстрации «в деньгах»
+stability:
+  bins: 10
+  psi_warn: 0.10
+  psi_threshold: 0.25
+  top_features: 5
+bootstrap: {n: 1000}

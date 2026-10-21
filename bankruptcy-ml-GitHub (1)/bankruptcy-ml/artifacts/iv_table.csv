@@ -1,0 +1,91 @@
+feature,iv,selected
+retained_self_financing,2.348299340498756,True
+roa_per_leverage,2.1710593440776993,False
+Retained Earnings to Total Assets,2.1492550647275466,True
+Interest Expense Ratio,2.1159448731801382,False
+Net Income to Total Assets,2.0798063254895474,False
+Persistent EPS in the Last Four Seasons,2.0772729363419202,False
+Net profit before tax/Paid-in capital,2.0277279163067288,False
+Interest Coverage Ratio (Interest expense to EBIT),2.0190712137193554,False
+Continuous interest rate (after tax),2.0081275546998594,False
+interest_drag,1.9316127493626305,True
+Total income/Total expense,1.9126627530264269,False
+After-tax net Interest Rate,1.858211263804199,False
+ROA(B) before interest and depreciation after tax,1.8459302815846605,False
+leverage_effect,1.8018805583875928,False
+Net Income to Stockholder's Equity,1.7909148959652232,False
+Borrowing dependency,1.7634478719808975,False
+cfo_per_leverage,1.7584111478678097,False
+Total debt/Total net worth,1.7186618076692555,False
+working_capital_vs_debt,1.5719285711027697,False
+Net Value Growth Rate,1.5671673157673671,True
+Non-industry income and expenditure/revenue,1.4990174940261434,False
+Degree of Financial Leverage (DFL),1.4174606186452827,True
+Net Value Per Share (B),1.3911508435563351,False
+Quick Ratio,1.300250002105591,True
+cashflow_vs_borrowing,1.257333099887029,True
+cash_cover_gap,1.2309307043835407,True
+Current Ratio,1.20509470101678,False
+Operating Profit Per Share (Yuan ¥),1.1287701563300043,False
+Operating Profit Rate,1.117232376885133,False
+Quick Assets/Current Liability,1.088149884648722,False
+Current Liabilities/Equity,1.0242494547416525,False
+Inventory/Working Capital,1.0185759051121293,False
+Operating profit per person,1.00227528981776,True
+Tax rate (A),0.949015256676958,True
+Working Capital to Total Assets,0.9382403698485333,True
+Cash flow rate,0.8994148322575712,True
+Operating Funds to Liability,0.8959141390323988,False
+Working capitcal Turnover Rate,0.8955614182340299,False
+short_debt_leverage,0.8862391586264742,False
+Current Liability to Assets,0.876976272923774,False
+tax_drag,0.8205670576626787,True
+Cash/Current Liability,0.8083462121996945,False
+Working Capital/Equity,0.7712944981776113,False
+Cash/Total Assets,0.7503565905235241,False
+Operating Gross Margin,0.7383217046334848,True
+Total Asset Growth Rate,0.6731842955262843,True
+After-tax Net Profit Growth Rate,0.6686247620678042,False
+quick_cover_gap,0.6331586833315005,False
+CFO to Assets,0.5642324430524067,False
+Cash Flow Per Share,0.5631923533311726,False
+Interest-bearing debt interest rate,0.5583898549460363,False
+fixed_asset_debt_burden,0.5397879699954841,False
+Long-term fund suitability ratio (A),0.5163647692179582,False
+No-credit Interval,0.5022035228718826,False
+Continuous Net Profit Growth Rate,0.49417939251519577,False
+Equity to Long-term Liability,0.4507960669094421,False
+Realized Sales Gross Profit Growth Rate,0.43900059786797585,False
+Cash Flow to Total Assets,0.4209938033881997,False
+Total Asset Return Growth Rate Ratio,0.3901360454539262,False
+Cash Flow to Sales,0.35533580970929013,False
+Operating Profit Growth Rate,0.3514630589339988,False
+margin_x_turnover,0.32797034822001125,False
+eps_to_book,0.325822425528465,False
+Cash Turnover Rate,0.3075757614216837,False
+Total Asset Turnover,0.29749141856003525,False
+Quick Assets/Total Assets,0.2968945721682304,False
+Allocation rate per person,0.2934653230209383,False
+Cash Reinvestment %,0.28184913070650774,False
+Long-term Liability to Current Assets,0.27806330515431676,False
+Inventory and accounts receivable/Net value,0.2748625924308953,False
+Inventory/Current Liability,0.2452398969906987,False
+Accounts Receivable Turnover,0.1995884212764573,False
+Total expense/Assets,0.1942889464440523,False
+Average Collection Days,0.17830640184562083,False
+Fixed Assets Turnover Frequency,0.1753478256721111,False
+Total assets to GNP price,0.1704993006214091,False
+Revenue Per Share (Yuan ¥),0.16959641118372473,False
+Research and development expense rate,0.14532154172504977,False
+Current Assets/Total Assets,0.12944583867649695,False
+Quick Asset Turnover Rate,0.10814880194774085,False
+Current Liabilities/Liability,0.1070645496752901,False
+Fixed Assets to Assets,0.10598875226371368,False
+Contingent liabilities/Net worth,0.1010906233085685,False
+Current Asset Turnover Rate,0.10016723429565765,False
+Inventory Turnover Rate (times),0.089933400375994,False
+Revenue per person,0.07543454523220443,False
+Operating Expense Rate,0.055912101237608584,False
+Net Worth Turnover Rate (times),0.037684312855988285,False
+Liability-Assets Flag,0.008095303622722693,False
+stress_flag,0.008095303622722693,False

@@ -1,0 +1,21 @@
+feature,reason,detail,partner
+Net Income Flag,constant,единственное значение на train,
+ROA(C) before interest and depreciation before interest,duplicate,"|rho_Spearman|=0.989, Gini 0.706 < 0.708",ROA(B) before interest and depreciation after tax
+ROA(A) before interest and % after tax,duplicate,"|rho_Spearman|=0.991, Gini 0.695 < 0.737",Net Income to Total Assets
+Realized Sales Gross Margin,duplicate,"|rho_Spearman|=0.999, Gini 0.464 < 0.467",Operating Gross Margin
+Gross Profit to Sales,duplicate,"|rho_Spearman|=1.000, Gini 0.467 < 0.467",Operating Gross Margin
+Pre-tax net Interest Rate,duplicate,"|rho_Spearman|=0.988, Gini 0.689 < 0.693",After-tax net Interest Rate
+Net Value Per Share (A),duplicate,"|rho_Spearman|=1.000, Gini 0.617 < 0.618",Net Value Per Share (B)
+Net Value Per Share (C),duplicate,"|rho_Spearman|=0.999, Gini 0.611 < 0.618",Net Value Per Share (B)
+Operating profit/Paid-in capital,duplicate,"|rho_Spearman|=0.999, Gini 0.588 < 0.588",Operating Profit Per Share (Yuan ¥)
+Per Share Net profit before tax (Yuan ¥),duplicate,"|rho_Spearman|=0.998, Gini 0.729 < 0.732",Net profit before tax/Paid-in capital
+Regular Net Profit Growth Rate,duplicate,"|rho_Spearman|=0.996, Gini 0.371 < 0.378",After-tax Net Profit Growth Rate
+Current Liability to Current Assets,duplicate,"|rho_Spearman|=0.999, Gini 0.579 < 0.580",Current Ratio
+Debt ratio %,duplicate,"|rho_Spearman|=0.991, Gini 0.668 < 0.676",Total debt/Total net worth
+Net worth/Assets,duplicate,"|rho_Spearman|=0.991, Gini 0.668 < 0.676",Total debt/Total net worth
+Liability to Equity,duplicate,"|rho_Spearman|=0.984, Gini 0.615 < 0.676",Total debt/Total net worth
+Equity to Liability,duplicate,"|rho_Spearman|=0.991, Gini 0.668 < 0.676",Total debt/Total net worth
+Current Liability to Liability,duplicate,"|rho_Spearman|=1.000, Gini 0.083 < 0.083",Current Liabilities/Liability
+Current Liability to Equity,duplicate,"|rho_Spearman|=1.000, Gini 0.555 < 0.555",Current Liabilities/Equity
+Cash Flow to Liability,duplicate,"|rho_Spearman|=0.987, Gini 0.256 < 0.281",Cash Flow to Total Assets
+Cash Flow to Equity,duplicate,"|rho_Spearman|=0.987, Gini 0.281 < 0.281",Cash Flow to Total Assets

@@ -1,0 +1,642 @@
+{
+  "step1": {
+    "n_rows": 6819,
+    "n_raw_features": 95,
+    "bankrupt_total": 220,
+    "split": [
+      {
+        "sample": "train",
+        "n": 4773,
+        "bankrupt": 188,
+        "bankrupt_rate": 0.039388225434737065,
+        "row_from": 0,
+        "row_to": 4772
+      },
+      {
+        "sample": "valid",
+        "n": 1023,
+        "bankrupt": 13,
+        "bankrupt_rate": 0.01270772238514174,
+        "row_from": 4773,
+        "row_to": 5795
+      },
+      {
+        "sample": "test (OOT)",
+        "n": 1023,
+        "bankrupt": 19,
+        "bankrupt_rate": 0.01857282502443793,
+        "row_from": 5796,
+        "row_to": 6818
+      }
+    ],
+    "n_removed": 20,
+    "removed_by_reason": {
+      "duplicate": 19,
+      "constant": 1
+    },
+    "n_features_after_audit": 75,
+    "n_new_features": 15,
+    "block_rates": [
+      0.05278592375366569,
+      0.04398826979472141,
+      0.08504398826979472,
+      0.04985337243401759,
+      0.017595307917888565,
+      0.013196480938416423,
+      0.013196480938416423,
+      0.01466275659824047,
+      0.011730205278592375,
+      0.020558002936857563
+    ],
+    "split_demo": {
+      "gini_valid_time_split": 0.9623762376237626,
+      "gini_valid_random_split": 0.8422216441207075
+    },
+    "missing_total": 0,
+    "max_univariate_gini": 0.7513236966054897,
+    "engine": "lightgbm"
+  },
+  "step2": {
+    "best_C": 0.01,
+    "n_features": 15,
+    "features": [
+      "retained_self_financing",
+      "Retained Earnings to Total Assets",
+      "interest_drag",
+      "Net Value Growth Rate",
+      "Degree of Financial Leverage (DFL)",
+      "Quick Ratio",
+      "cashflow_vs_borrowing",
+      "cash_cover_gap",
+      "Operating profit per person",
+      "Tax rate (A)",
+      "Working Capital to Total Assets",
+      "Cash flow rate",
+      "tax_drag",
+      "Operating Gross Margin",
+      "Total Asset Growth Rate"
+    ],
+    "cv_gini": 0.7949676692187533,
+    "cv_gini_std": 0.06569898855021039,
+    "train": {
+      "gini": 0.8549618320610688,
+      "auc": 0.9274809160305344,
+      "ks": 0.7275690851295853,
+      "pr_auc": 0.42229911815353605,
+      "brier": 0.028397920866440454,
+      "ece": 0.007253014175414914,
+      "recall@5%": 0.5319148936170213,
+      "recall@10%": 0.75,
+      "recall@20%": 0.8776595744680851
+    },
+    "valid": {
+      "gini": 0.969078446306169,
+      "auc": 0.9845392231530845,
+      "ks": 0.9435643564356435,
+      "pr_auc": 0.3660502006655853,
+      "brier": 0.009713404852894411,
+      "ece": 0.01287764805148164,
+      "recall@5%": 0.9230769230769231,
+      "recall@10%": 1.0,
+      "recall@20%": 1.0
+    },
+    "valid_calibrated": {
+      "gini": 0.9757806549885757,
+      "auc": 0.9878903274942878,
+      "ks": 0.9485148514851485,
+      "pr_auc": 0.4288493903878519,
+      "brier": 0.008017615055738224,
+      "ece": 0.0,
+      "recall@5%": 0.9230769230769231,
+      "recall@10%": 1.0,
+      "recall@20%": 1.0
+    },
+    "valid_gini_ci": [
+      0.9463785224676314,
+      0.9866031987814167
+    ],
+    "sign_ok": true,
+    "grid": [
+      {
+        "C": 0.01,
+        "cv_gini": 0.7949676692187533,
+        "cv_gini_std": 0.06569898855021039
+      },
+      {
+        "C": 0.03,
+        "cv_gini": 0.7883028904393119,
+        "cv_gini_std": 0.06909519361871563
+      },
+      {
+        "C": 0.1,
+        "cv_gini": 0.7830372915254455,
+        "cv_gini_std": 0.07334774908744679
+      },
+      {
+        "C": 0.3,
+        "cv_gini": 0.7813883830333922,
+        "cv_gini_std": 0.0752545983211071
+      },
+      {
+        "C": 1.0,
+        "cv_gini": 0.7811422481832103,
+        "cv_gini_std": 0.075755039318541
+      }
+    ]
+  },
+  "step3": {
+    "engine": "lightgbm",
+    "final_params": {
+      "num_leaves": 16,
+      "learning_rate": 0.02,
+      "min_child_samples": 50,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 1.0,
+      "scale_pos_weight": 3.0,
+      "n_estimators": 296,
+      "subsample_freq": 1,
+      "reg_alpha": 0.0
+    },
+    "best_iteration": 296,
+    "n_search": 30,
+    "search_best_cv_gini": 0.8402217802551604,
+    "search_best_cv_std": 0.08799577471286084,
+    "search_median_cv_gini": 0.8242739855550769,
+    "valid_raw": {
+      "gini": 0.9693830921553692,
+      "auc": 0.9846915460776846,
+      "ks": 0.9326732673267327,
+      "pr_auc": 0.3505157714130963,
+      "brier": 0.011396522426234342,
+      "ece": 0.015399649318291676,
+      "recall@5%": 0.9230769230769231,
+      "recall@10%": 1.0,
+      "recall@20%": 1.0
+    },
+    "valid_calibrated": {
+      "gini": 0.9768469154607766,
+      "auc": 0.9884234577303883,
+      "ks": 0.9643564356435643,
+      "pr_auc": 0.3909786410729096,
+      "brier": 0.00832498426613423,
+      "ece": 0.00046041055718475305,
+      "recall@5%": 0.9230769230769231,
+      "recall@10%": 1.0,
+      "recall@20%": 1.0
+    },
+    "valid_gini_ci": [
+      0.9460776846915462,
+      0.987966488956588
+    ],
+    "gini_valid_raw_features_only": 0.9741051028179739,
+    "n_features_model": 90,
+    "comparison": [
+      {
+        "model": "Скоринговая карта (WoE + логрег)",
+        "cv_gini_train": 0.7949676692187533,
+        "gini": 0.969078446306169,
+        "ks": 0.9435643564356435,
+        "pr_auc": 0.3660502006655853,
+        "brier": 0.009713404852894411,
+        "recall@10%": 1.0
+      },
+      {
+        "model": "Бустинг (сырые вероятности)",
+        "cv_gini_train": 0.8402217802551604,
+        "gini": 0.9693830921553692,
+        "ks": 0.9326732673267327,
+        "pr_auc": 0.3505157714130963,
+        "brier": 0.011396522426234342,
+        "recall@10%": 1.0
+      },
+      {
+        "model": "Бустинг + isotonic-калибровка",
+        "cv_gini_train": 0.8402217802551604,
+        "gini": 0.9768469154607766,
+        "ks": 0.9643564356435643,
+        "pr_auc": 0.3909786410729096,
+        "brier": 0.00832498426613423,
+        "recall@10%": 1.0
+      }
+    ]
+  },
+  "step4": {
+    "engine": "lightgbm",
+    "shap_method": "shap",
+    "boost": {
+      "gini": 0.9347871671209897,
+      "auc": 0.9673935835604949,
+      "ks": 0.8675298804780877,
+      "pr_auc": 0.5369677936089969,
+      "brier": 0.013567834682884434,
+      "ece": 0.012615377428400534,
+      "recall@5%": 0.7894736842105263,
+      "recall@10%": 0.7894736842105263,
+      "recall@20%": 1.0,
+      "brier_calibrated": 0.013502254608800664,
+      "ece_calibrated": 0.007840883093113702,
+      "gini_ci": [
+        0.8921105053470327,
+        0.9710709792409309
+      ],
+      "ks_ci": [
+        0.848605577689243,
+        0.9205008911721535
+      ],
+      "recall@5%_ci": [
+        0.5789473684210527,
+        0.9473684210526315
+      ],
+      "lift@5%": 15.531376518218622,
+      "recall@10%_ci": [
+        0.631578947368421,
+        0.9473684210526315
+      ],
+      "lift@10%": 7.841083290751149,
+      "recall@20%_ci": [
+        1.0,
+        1.0
+      ],
+      "lift@20%": 4.990243902439024
+    },
+    "base": {
+      "gini": 0.9305934158104425,
+      "auc": 0.9652967079052213,
+      "ks": 0.7981232962885301,
+      "pr_auc": 0.5242189190493686,
+      "brier": 0.012757626721598667,
+      "ece": 0.0046024293033889475,
+      "recall@5%": 0.7894736842105263,
+      "recall@10%": 0.8421052631578947,
+      "recall@20%": 0.9473684210526315,
+      "brier_calibrated": 0.013245107086268084,
+      "ece_calibrated": 0.007991834277819826,
+      "gini_ci": [
+        0.8768898091843154,
+        0.9734771440553575
+      ],
+      "ks_ci": [
+        0.7808764940239044,
+        0.9214720067100022
+      ],
+      "recall@5%_ci": [
+        0.5789473684210527,
+        0.9473684210526315
+      ],
+      "lift@5%": 15.531376518218622,
+      "recall@10%_ci": [
+        0.631578947368421,
+        0.9473684210526315
+      ],
+      "lift@10%": 8.363822176801225,
+      "recall@20%_ci": [
+        0.8421052631578947,
+        1.0
+      ],
+      "lift@20%": 4.72759948652118
+    },
+    "gini_diff": {
+      "mean": 0.004406584189557554,
+      "ci": [
+        -0.015726567414552146,
+        0.02872981757181795
+      ],
+      "share_boost_better": 0.622
+    },
+    "finance": {
+      "margin": 0.08,
+      "lgd": 0.45,
+      "threshold_pd": 0.25,
+      "threshold_pd_baseline": 0.5333333333333333,
+      "expected_profit_valid": 78.34036999999998,
+      "calibration_compare": {
+        "raw": {
+          "brier": 0.013567834682884434,
+          "ece": 0.012615377428400534,
+          "mean_pd": 0.026858348372790948
+        },
+        "isotonic": {
+          "brier": 0.013502254608800664,
+          "ece": 0.007840883093113702,
+          "mean_pd": 0.011431844179613569
+        },
+        "sigmoid": {
+          "brier": 0.01277682725504471,
+          "ece": 0.00614864163740199,
+          "mean_pd": 0.012833337242186828
+        },
+        "actual_rate": 0.01857282502443793
+      },
+      "all_approved": {
+        "threshold": 2.0,
+        "approved": 1023,
+        "approve_rate": 1.0,
+        "good_approved": 1004,
+        "bad_approved": 19,
+        "income": 80.32000000000001,
+        "loss": 8.55,
+        "profit": 71.77000000000001,
+        "profit_per_exposure": 0.0701564027370479
+      },
+      "boosting": {
+        "threshold": 0.25,
+        "approved": 995,
+        "approve_rate": 0.9726295210166178,
+        "good_approved": 988,
+        "bad_approved": 7,
+        "income": 79.04,
+        "loss": 3.15,
+        "profit": 75.89,
+        "profit_per_exposure": 0.07418377321603128
+      },
+      "baseline": {
+        "threshold": 0.5333333333333333,
+        "approved": 1011,
+        "approve_rate": 0.9882697947214076,
+        "good_approved": 999,
+        "bad_approved": 12,
+        "income": 79.92,
+        "loss": 5.4,
+        "profit": 74.52,
+        "profit_per_exposure": 0.07284457478005865
+      },
+      "oracle": {
+        "threshold": 0.5,
+        "approved": 1004,
+        "approve_rate": 0.9814271749755621,
+        "good_approved": 1004,
+        "bad_approved": 0,
+        "income": 80.32000000000001,
+        "loss": 0.0,
+        "profit": 80.32000000000001,
+        "profit_per_exposure": 0.07851417399804497
+      },
+      "sensitivity": [
+        {
+          "margin": 0.03,
+          "threshold_pd": 0.25,
+          "reject_rate": 0.027370478983382185,
+          "profit_all_approved": 0.02108504398826979,
+          "profit_boosting": 0.025894428152492672,
+          "profit_baseline": 0.026422287390029324,
+          "gain_vs_all": 0.004809384164222882
+        },
+        {
+          "margin": 0.05,
+          "threshold_pd": 0.25,
+          "reject_rate": 0.027370478983382185,
+          "profit_all_approved": 0.04071358748778104,
+          "profit_boosting": 0.04521016617790812,
+          "profit_baseline": 0.045454545454545456,
+          "gain_vs_all": 0.0044965786901270816
+        },
+        {
+          "margin": 0.08,
+          "threshold_pd": 0.25,
+          "reject_rate": 0.027370478983382185,
+          "profit_all_approved": 0.0701564027370479,
+          "profit_boosting": 0.07418377321603128,
+          "profit_baseline": 0.07284457478005865,
+          "gain_vs_all": 0.004027370478983383
+        },
+        {
+          "margin": 0.12,
+          "threshold_pd": 0.25,
+          "reject_rate": 0.027370478983382185,
+          "profit_all_approved": 0.10941348973607037,
+          "profit_boosting": 0.11281524926686216,
+          "profit_baseline": 0.11190615835777125,
+          "gain_vs_all": 0.0034017595307917897
+        }
+      ],
+      "money_example_ead": 1000000
+    },
+    "shap_top": {
+      "retained_self_financing": 0.2505821963709941,
+      "Continuous interest rate (after tax)": 0.1927285739971208,
+      "Accounts Receivable Turnover": 0.1910965484407631,
+      "ROA(B) before interest and depreciation after tax": 0.18741271090905537,
+      "Quick Ratio": 0.18018407362425512,
+      "interest_drag": 0.1795123084838337,
+      "Interest-bearing debt interest rate": 0.13442208460457059,
+      "Retained Earnings to Total Assets": 0.1283492813140809,
+      "eps_to_book": 0.12123267496163735,
+      "Allocation rate per person": 0.10925284409618227
+    },
+    "shap_direction": {
+      "retained_self_financing": -0.6727340134348491,
+      "Continuous interest rate (after tax)": -0.9171275772363011,
+      "Accounts Receivable Turnover": -0.8281355298366707,
+      "ROA(B) before interest and depreciation after tax": -0.9165314673907268,
+      "Quick Ratio": -0.28222043444274314,
+      "interest_drag": 0.2898632702576465,
+      "Interest-bearing debt interest rate": 0.6932964905102906,
+      "Retained Earnings to Total Assets": -0.8669518037199212,
+      "eps_to_book": -0.7327085847487114,
+      "Allocation rate per person": 0.3549205182720017
+    },
+    "shap_top_new": {
+      "cash_cover_gap": 0.02773488097280577,
+      "quick_cover_gap": 0.013024375992042146,
+      "roa_per_leverage": 0.10049273238355179,
+      "cfo_per_leverage": 0.013026582996205776,
+      "interest_drag": 0.1795123084838337,
+      "tax_drag": 0.05911013906782598,
+      "retained_self_financing": 0.2505821963709941,
+      "short_debt_leverage": 0.010404125003835581,
+      "fixed_asset_debt_burden": 0.0872036053297571,
+      "leverage_effect": 0.015099868442674197,
+      "eps_to_book": 0.12123267496163735,
+      "cashflow_vs_borrowing": 0.0696816405260891,
+      "margin_x_turnover": 0.020663433436024073,
+      "working_capital_vs_debt": 0.013202599320077241,
+      "stress_flag": 0.07697424984328775
+    },
+    "cases": [
+      {
+        "case": "A",
+        "title": "A: отказ, банкрот (верно)",
+        "row_in_test": 844,
+        "target": 1,
+        "pd_calibrated": 0.4375,
+        "score_pct_rank": 0.9990224828934506,
+        "decision": "отказ",
+        "top": [
+          {
+            "feature": "retained_self_financing",
+            "value": 0.6819620594518542,
+            "shap": 0.8452719234212815
+          },
+          {
+            "feature": "interest_drag",
+            "value": 0.20274993796828822,
+            "shap": 0.5948465962586944
+          },
+          {
+            "feature": "ROA(B) before interest and depreciation after tax",
+            "value": 0.221425129824937,
+            "shap": 0.537429380927172
+          },
+          {
+            "feature": "Net Value Per Share (B)",
+            "value": 0.0696557245796637,
+            "shap": 0.5021802506975264
+          },
+          {
+            "feature": "stress_flag",
+            "value": 1.0,
+            "shap": 0.4480983057632861
+          }
+        ]
+      },
+      {
+        "case": "B",
+        "title": "B: отказ, не банкрот (ложная тревога)",
+        "row_in_test": 484,
+        "target": 0,
+        "pd_calibrated": 0.4375,
+        "score_pct_rank": 0.9951124144672532,
+        "decision": "отказ",
+        "top": [
+          {
+            "feature": "retained_self_financing",
+            "value": 0.6918743378621519,
+            "shap": 0.8207946198204519
+          },
+          {
+            "feature": "interest_drag",
+            "value": 0.20193143145040093,
+            "shap": 0.47844911251796424
+          },
+          {
+            "feature": "stress_flag",
+            "value": 1.0,
+            "shap": 0.45716902343378346
+          },
+          {
+            "feature": "ROA(B) before interest and depreciation after tax",
+            "value": 0.402323464853579,
+            "shap": 0.4206923373720594
+          },
+          {
+            "feature": "Net Value Per Share (B)",
+            "value": 0.139901394800051,
+            "shap": 0.4026768429272761
+          }
+        ]
+      },
+      {
+        "case": "C",
+        "title": "C: банкрот, пропущен",
+        "row_in_test": 103,
+        "target": 1,
+        "pd_calibrated": 0.0005,
+        "score_pct_rank": 0.8514173998044966,
+        "decision": "одобрение",
+        "top": [
+          {
+            "feature": "retained_self_financing",
+            "value": 0.768027225917444,
+            "shap": 0.3373560859086994
+          },
+          {
+            "feature": "Continuous interest rate (after tax)",
+            "value": 0.781702746757816,
+            "shap": -0.3228864749455009
+          },
+          {
+            "feature": "Accounts Receivable Turnover",
+            "value": 0.0005376725878283,
+            "shap": 0.32088899424892986
+          },
+          {
+            "feature": "Quick Ratio",
+            "value": 0.0021185621226545,
+            "shap": 0.24724945911017196
+          },
+          {
+            "feature": "Revenue per person",
+            "value": 0.0066918320285533,
+            "shap": -0.2447666271855321
+          }
+        ]
+      }
+    ],
+    "psi": [
+      {
+        "item": "score (бустинг)",
+        "psi_train_valid": 0.03369317790406948,
+        "psi_train_test": 0.03050224271424183,
+        "train_median": 0.0021780099662038117,
+        "test_median": 0.0018799853082351427,
+        "median_shift_pct": -13.68334683753909,
+        "flag": "стабилен"
+      },
+      {
+        "item": "retained_self_financing",
+        "psi_train_valid": 0.08605172469415048,
+        "psi_train_test": 0.09432527377036412,
+        "train_median": 0.8271374014234809,
+        "test_median": 0.8440693902473546,
+        "median_shift_pct": 2.0470587830647893,
+        "flag": "стабилен"
+      },
+      {
+        "item": "interest_drag",
+        "psi_train_valid": 0.05017543198213939,
+        "psi_train_test": 0.09072888779151499,
+        "train_median": 0.201568318030793,
+        "test_median": 0.20155788874024905,
+        "median_shift_pct": -0.005174072317412131,
+        "flag": "стабилен"
+      },
+      {
+        "item": "Quick Ratio",
+        "psi_train_valid": 0.39260470252206764,
+        "psi_train_test": 0.3253302477095833,
+        "train_median": 0.0067249999064239,
+        "test_median": 0.0087780587832366,
+        "median_shift_pct": 30.528756952788594,
+        "flag": "НЕСТАБИЛЕН (>0,25)"
+      },
+      {
+        "item": "ROA(B) before interest and depreciation after tax",
+        "psi_train_valid": 0.06812426152568928,
+        "psi_train_test": 0.033266335062385785,
+        "train_median": 0.550725413566037,
+        "test_median": 0.553669896675411,
+        "median_shift_pct": 0.5346553902974356,
+        "flag": "стабилен"
+      },
+      {
+        "item": "Continuous interest rate (after tax)",
+        "psi_train_valid": 0.08107090204269116,
+        "psi_train_test": 0.03639755105275256,
+        "train_median": 0.781628360604981,
+        "test_median": 0.781642395728158,
+        "median_shift_pct": 0.0017956261420850705,
+        "flag": "стабилен"
+      },
+      {
+        "item": "score (скоринговая карта)",
+        "psi_train_valid": 0.10065431850756569,
+        "psi_train_test": 0.10099552600518696,
+        "train_median": 0.005602508948307913,
+        "test_median": 0.0031444331031215368,
+        "median_shift_pct": -43.8745545509575,
+        "flag": "умеренный сдвиг"
+      }
+    ],
+    "top_features_stability": [
+      "retained_self_financing",
+      "interest_drag",
+      "Quick Ratio",
+      "ROA(B) before interest and depreciation after tax",
+      "Continuous interest rate (after tax)"
+    ],
+    "predict_check_ok": true,
+    "test_n": 1023,
+    "test_bankrupt": 19
+  }
+}
